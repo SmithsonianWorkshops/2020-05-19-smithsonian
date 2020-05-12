@@ -14,7 +14,7 @@
 #  https://github.com/carpentries/workshop-template
 # and for instructor training events you should use:
 #  https://github.com/carpentries/training-template
-carpentry: "cp"
+carpentry: "dc"
 
 # This option is currently only needed for Data Carpentry workshops.
 # The value of the variable will be ignored for Software Carpentry and
@@ -24,7 +24,7 @@ carpentry: "cp"
 # dc-genomics: for Data Carpentry Genomics
 # dc-socsci: for Data Carpentry Social Sciences
 # dc-geospatial: for Data Carpentry Geospatial
-curriculum: "FIXME"
+curriculum: "dc-ecology"
 
 # If there is both an R and python official version of a curriculum, change the
 # value of the variable below ("flavor") to get the schedule updated accordingly
@@ -38,7 +38,7 @@ flavor: "r"
 # Most workshops don't use extra pages. More information about extra
 # pages are included in the README:
 # https://github.com/carpentries/workshop-template#creating-extra-pages
-title: "Workshop Title"
+title: "Virtual Data Carpentry Workshop"
 
 
 #------------------------------------------------------------
