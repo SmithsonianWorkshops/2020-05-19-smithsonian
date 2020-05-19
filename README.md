@@ -10,7 +10,7 @@ EtherPad: https://pad.carpentries.org/2020-05-19-smithsonian
 
 ## OpenRefine
 
-OpenRefine: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SmithsonianWorkshops/binders/open_refine?urlpath=openrefine)
+OpenRefine: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SmithsonianWorkshops/binders34/open_refine?urlpath=openrefine)
 
 ## RStudio
 Rstudio: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SmithsonianWorkshops/binders/rstudio?urlpath=rstudio)
