@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">## Spring 2020 
+# Quarterly Data Carpentry Workshop
+
+![SI Carpentries](images/si_carpentries.png)
+</script></section><section  data-markdown><script type="text/template">
+Before we start...
+
+## Code of Conduct
+
+* We are dedicated to providing a welcoming and supportive environment for all people, regardless of background or identity.
+</script></section><section  data-markdown><script type="text/template">
+## Code of Conduct
+
+https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html
+</script></section><section  data-markdown><script type="text/template">
+## Code of Conduct
+
+* Go to Instructors or Helpers if you feel the Code of Conduct is being violated.
+
+* There is also a big blue "Report a Code of Conduct Incident" on the course website if you feel the Instructors are not handling appropriately.
+</script></section><section  data-markdown><script type="text/template">
+## Introductions
+
+### *Instructors and Helpers*
+</script></section><section  data-markdown><script type="text/template">
+## Introductions
+
+### *Learners*
+</script></section><section  data-markdown><script type="text/template">
+## What is the Carpentries?
+
+https://carpentries.org/
+
+The Carpentries is a global volunteer-driven organization dedicated to teaching computational skills to researchers and anyone who works with data.
+</script></section><section  data-markdown><script type="text/template">
+## Carpentries at the Smithsonian
+
+https://datascience.si.edu/carpentries
+
+The Smithsonian Carpentries Team is made up of Smithsonian staff and fellows from around the institution.
+</script></section><section  data-markdown><script type="text/template">
+## Carpentries way of teaching
+
+Code along, rather than lecturing from PowerPoint, or just demonstrating
+
+Odds of running into an error are high, but don’t panic – this is a great opportunity to learn
+</script></section><section  data-markdown><script type="text/template">
+## ***We won’t leave you behind***
+</script></section><section  data-markdown><script type="text/template">
+### How to make sure we don't leave you behind
+
+In the real world, we used to use Post-It notes to indicate progress, but for this workshop we'll use the "yes" / "no" buttons in the Zoom Participants panel.
+
+![Zoom Yes No](images/zoom_screenshot.png)
+</script></section><section  data-markdown><script type="text/template">
+## How to ask questions
+
+The Instructors will try to build in time between lessons to ask questions, but use the Zoom chat for questions that come up during a lesson.
+
+![Zoom Question](images/zoom_chat.png)
+</script></section><section  data-markdown><script type="text/template">
+## Course GitHub repository
+
+https://github.com/SmithsonianWorkshops/2020-05-19-smithsonian
+</script></section><section  data-markdown><script type="text/template">
+## Course EtherPad
+
+https://pad.carpentries.org/2020-05-19-smithsonian
+
+A collaborative document – think of it as a stripped-down version of Google Docs
+</script></section><section  data-markdown><script type="text/template">
+## Your first challenge
+
+* Go to the EtherPad
+
+* Add your name, unit, and your favorite emoji (😀) under Attendance Day 1
+</script></section><section  data-markdown><script type="text/template">
+## What we will be teaching in this workshop
+
+We will be teaching you data organization, cleaning, and visualization skills, so that your analyses can be easily understoood and reproduced by your colleagues ... and your future self.
+</script></section><section  data-markdown><script type="text/template">
+## Tidy Data Principles in Spreadsheets
+</script></section><section  data-markdown><script type="text/template">
+## OpenRefine
+</script></section><section  data-markdown><script type="text/template">
+## SQL
+</script></section><section  data-markdown><script type="text/template">
+## R and RStudio
+</script></section><section  data-markdown><script type="text/template">
+> We will be teaching you a lot of valuable skills on a demo dataset, but you won't be able to add these tools to your *toolbag* until you work through how to apply them to your own data.</script></section></div>
+    </div>
+
+    <script src="./js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":true,"progress":true}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
