@@ -21,9 +21,9 @@ FROM surveys
 WHERE species_id = 'DM' OR species_id = 'DO';
 
 -- WHERE: numeric columns
---SELECT *
---FROM surveys
---WHERE year >= 2000;
+SELECT *
+FROM surveys
+WHERE year >= 2000;
 
 -- WHERE: using AND
 SELECT *
