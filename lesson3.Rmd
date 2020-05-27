@@ -1,6 +1,8 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
@@ -85,5 +87,146 @@ ggplot(data = surveys_complete,
                      y = hindfoot_length,
                      color = species_id)) +
   geom_point(alpha = 0.1)
+```
+
+Use what you just learned to create a scatter plot of weight over species_id with the plot types showing in different colors.
+
+```{r}
+ggplot(data = surveys_complete,
+       mapping = aes(x = species_id,
+                     y = weight,
+                     color = plot_type)) +
+  geom_point(alpha = 0.1)
+```
+
+```{r}
+ggplot(data = surveys_complete,
+       mapping = aes(x = species_id,
+                     y = weight)) +
+  geom_boxplot()
+```
+
+```{r}
+ggplot(data = surveys_complete,
+       mapping = aes(x = species_id,
+                     y = weight)) +
+  geom_boxplot() +
+  geom_jitter(alpha=0.3, color = "tomato")
+```
+
+```{r}
+ggplot(data = surveys_complete,
+       mapping = aes(x = species_id,
+                     y = weight,
+                     color = sex)) +
+  geom_jitter(alpha=0.3) + geom_boxplot(alpha=0.1)
+  
+```
+
+```{r}
+yearly_counts <- surveys_complete %>% 
+  count(year, genus)
+head(yearly_counts)
+```
+
+```{r}
+ggplot(data = yearly_counts,
+       mapping = aes(x = year,
+                     y = n)) +
+  geom_line()
+```
+
+```{r}
+ggplot(data = yearly_counts,
+       mapping = aes(x = year,
+                     y = n,
+                     group = genus)) +
+  geom_line()
+```
+
+```{r}
+ggplot(data = yearly_counts,
+       mapping = aes(x = year,
+                     y = n,
+                     color = genus)) +
+  geom_line()
+```
+
+```{r}
+ggplot(data = yearly_counts,
+       mapping = aes(x = year,
+                     y = n)) +
+  geom_line() +
+  facet_wrap(facets = vars(genus))
+```
+
+```{r}
+yearly_sex_counts <- surveys_complete %>% 
+  count(year, genus, sex)
+head(yearly_sex_counts)
+```
+
+```{r}
+ggplot(data = yearly_sex_counts,
+       mapping = aes(x = year,
+                     y = n,
+                     color = sex)) +
+  geom_line() +
+  facet_wrap(facets = vars(genus))
+```
+
+```{r}
+ggplot(data = yearly_sex_counts,
+       mapping = aes(x = year,
+                     y = n,
+                     color = sex)) +
+  geom_line() +
+  facet_grid(rows = vars(sex),
+             cols = vars(genus))
+```
+
+```{r}
+ggplot(data = yearly_sex_counts,
+       mapping = aes(x = year,
+                     y = n,
+                     color = sex)) +
+  geom_line() +
+  facet_grid(rows = vars(genus))
+```
+
+```{r}
+ggplot(data = yearly_sex_counts,
+       mapping = aes(x = year,
+                     y = n,
+                     color = sex)) +
+  geom_line() +
+  facet_wrap(facets = vars(genus)) +
+  theme_bw()
+```
+
+```{r}
+yearly_weights <- surveys_complete %>% 
+  group_by(year, species_id) %>% 
+  summarize(mean_weight = mean(weight))
+head(yearly_weights)
+```
+
+```{r}
+ggplot(data = yearly_weights,
+       mapping = aes(x = year,
+                     y = mean_weight)) +
+  geom_line() +
+  facet_wrap(facets = vars(species_id)) +
+  theme_minimal()
+```
+
+```{r}
+weight_graph <- ggplot(data = yearly_weights,
+       mapping = aes(x = year,
+                     y = mean_weight)) +
+  geom_line() +
+  facet_wrap(facets = vars(species_id)) +
+  theme_minimal()
+ggsave('weight_graph.png', plot = weight_graph, width = 10, dpi=500)
 ```
 
